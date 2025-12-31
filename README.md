@@ -35,7 +35,9 @@ The results highlight Shell's ability to maintain consistent growth across marke
 
 ### Normalized Price Performance
 
-Normalized price charts allow direct comparison of equity growth over the analysis period. Shell demonstrates consistent growth across the cycle, while renewable equities have outperformed Shell on average by ~4% per year with slightly lower volatility.
+Normalized price charts allow direct comparison of equity growth over the analysis period. Shell demonstrates consistent growth across the cycle, while renewable equities have outperformed Shell on average by ~4% per year with slightly lower volatility.  
+
+**Note:** Figures of normalized stock returns are available and can be viewed in the Jupyter notebook `Shell_vs_Gas_and_Renewables.ipynb`.
 
 ### Risk-Return Summary
 
