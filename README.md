@@ -75,7 +75,7 @@ Analysis indicates moderate co-movement between Shell and natural gas in high-pr
 
 ### Linear Regression Analysis
 
-A linear regression model was fitted to quantify the relationship between 3-month LNG equity returns and natural gas returns with interaction terms for medium and high gas price regimes. The model can be expressed as:
+A linear regression model was fitted to quantify the relationship between 3-month Shell equity returns and natural gas returns with interaction terms for medium and high gas price regimes. The model can be expressed as:
 
 **Regression Model:**
 
@@ -83,7 +83,7 @@ R_LNG = alpha + beta * R_gas + gamma_medium * (R_gas * D_medium) + gamma_high * 
 
 Where:
 
-- R_LNG = LNG equity 3-month return  
+- R_LNG = Shell equity 3-month return  
 - R_gas = 3-month natural gas return  
 - D_medium, D_high = regime dummies for medium and high gas price regimes  
 - alpha, beta, gamma_medium, gamma_high = regression coefficients  
