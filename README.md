@@ -133,6 +133,6 @@ Where:
 Clone this repository and run the Jupyter notebook `Shell_vs_Gas_and_Renewables.ipynb` to reproduce the analysis and charts.  
 
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+git clone https://github.com/alexanderdecosta/analysis-of-Shell-stock.git
+cd analysis-of-Shell-stock
 jupyter notebook
