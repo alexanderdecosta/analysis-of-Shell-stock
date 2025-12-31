@@ -71,36 +71,60 @@ Normalized price charts allow direct comparison of equity growth over the analys
 | Medium     | 0.4202 | 0.1501 |
 | Low        | -0.1794| 0.1651 |
 
-Analysis indicates moderate co-movement between Shell and natural gas in high-price regimes, but overall weak predictive power.
+Analysis indicates moderate co-movement between Shell and natural gas in high-price regimes, but overall predictive power is weak.
 
 ### Linear Regression Analysis
 
-A linear regression model was fitted with interaction terms for medium and high gas regimes:
+A linear regression model was fitted to quantify the relationship between 3-month LNG equity returns and natural gas returns with interaction terms for medium and high gas price regimes. The model can be expressed as:
 
-R_LNG = α + βR_gas + γ_mediumR_gasD_medium + γ_highR_gas*D_high + ε
+**Regression Model:**
 
+R_LNG = alpha + beta * R_gas + gamma_medium * (R_gas * D_medium) + gamma_high * (R_gas * D_high) + epsilon
 
-**Key Findings:**
+Where:
 
-- Base effect of gas returns (low regime): -0.0317
-- Additional effect in medium regime: 0.2922
-- Additional effect in high regime: 0.2567
+- R_LNG = LNG equity 3-month return  
+- R_gas = 3-month natural gas return  
+- D_medium, D_high = regime dummies for medium and high gas price regimes  
+- alpha, beta, gamma_medium, gamma_high = regression coefficients  
+- epsilon = residual error
 
-**High Regime Performance:**
+**Key Findings (All Regimes):**
 
-| Period         | N observations | R²    | RMSE     |
-|----------------|----------------|-------|----------|
-| Train (2006-2015)| 12           | 0.0759| 0.1375  |
-| Test (2015-2025) | 13           | 0.0195| 0.1039  |
+| Effect | Coefficient |
+|--------|------------|
+| Base effect (low regime) | -0.0317 |
+| Medium regime adjustment  | 0.2922 |
+| High regime adjustment    | 0.2567 |
 
-The low R² indicates that while Shell moves somewhat with natural gas in high-price regimes, the predictive power is weak.
+**Interpreted Total Effects by Regime:**
+
+| Regime | Total β |
+|--------|----------|
+| Low    | -0.0317 |
+| Medium | 0.2604  |
+| High   | 0.2250  |
+
+**Performance Metrics (High Regime Only):**
+
+| Period         | N obs | R²    | RMSE     |
+|----------------|-------|-------|----------|
+| Train (2006-2015)| 12  | 0.0759| 0.1375  |
+| Test (2015-2025) | 13  | 0.0195| 0.1039  |
+
+**Full Regression Discussion:**
+
+- The low R² across all regimes suggests that natural gas returns explain only a small portion of Shell’s equity return variability.  
+- Positive coefficients in medium and high regimes indicate that Shell tends to move in the same direction as gas when prices are elevated.  
+- Negative base effect in the low regime implies slight inverse movement when natural gas prices are low.  
+- Overall, the linear model captures some regime-specific sensitivity but is limited in predictive power, highlighting the influence of broader company-specific and market factors.
 
 ## Conclusions
 
-- Shell has maintained steady growth through market cycles, demonstrating resilience against volatile natural gas prices.
-- Renewable-focused equities have outperformed Shell in terms of annual returns while exhibiting similar or lower volatility.
-- Correlation and regression analyses show some co-movement between Shell and natural gas in high-price regimes, but predictive power remains low.
-- Overall, Shell’s strategy appears to balance exposure to energy markets while maintaining stable growth.
+- Shell has maintained steady growth through market cycles, demonstrating resilience against volatile natural gas prices.  
+- Renewable-focused equities have outperformed Shell in terms of annual returns while exhibiting similar or lower volatility.  
+- Correlation and regression analyses show modest co-movement between Shell and natural gas in high-price regimes, but predictive power is low.  
+- Shell’s performance appears driven by a combination of energy exposure and company-specific strategies rather than purely natural gas movements.
 
 ## Usage
 
@@ -110,4 +134,3 @@ Clone this repository and run the Jupyter notebook `Shell_vs_Gas_and_Renewables.
 git clone <repository-url>
 cd <repository-folder>
 jupyter notebook
-
